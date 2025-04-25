@@ -128,12 +128,12 @@ const content = {
       miniTag: "ADVOGADO DE REGISTRO DE MARCAS EM SÃO PAULO",
       title: (
         <h1 className="mb-[16px]">
-          Garanta sua marca.
-          <span className="text-primary"> Não corra riscos.</span>
+          Da pesquisa de viabilidade
+          <span className="text-primary">  ao deferimento</span>
         </h1>
       ),
       subtitle:
-        "Marcas não registradas viram alvo fácil. Proteja o que é seu antes que alguém leve.",
+        "Cuidamos de todo o processo para garantir que sua marca seja, de fato, sua!",
       heroImgPhone: heroImgPhone, // img da pessoa mobile
       heroDesktop: heroImgDesktop, //bg com foto da pessoa
       heroImg: bgHeroImg, //fundo da Hero
