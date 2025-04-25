@@ -497,25 +497,108 @@ const content = {
       subtitle: "Confira as perguntas abaixo para esclarecer suas dúvidas. ",
       questions: {
         question1: {
-          question: "Como posso contratar seus serviços?",
+          question:
+            "Inscrição na Junta Comercial, domínio de site e “@” do Instagram protege a marca?",
           answer:
-            "Agende sua consulta via WhatsApp, e juntos discutiremos suas necessidades, avaliando a melhor forma de proteger sua marca e os custos envolvidos.",
+            "Não! No Brasil a única maneira de proteger a marca e ser o dono dela é com o registro realizado junto ao INPI (Instituto Nacional da Propriedade Industrial). Não existe outra maneira!",
         },
         question2: {
-          question: "Qual é o prazo médio para o registro de uma marca?",
-          answer:
-            "O prazo varia de acordo com a complexidade do caso e a análise do INPI, mas forneceremos uma estimativa precisa durante a consulta inicial.",
+          question: "Como saber se minha marca já está registrada?",
+          answer: (
+            <p>
+              É necessário acessar o banco de dados do INPI e fazer uma busca
+              detalhada na(s) classe(s) pertinente(s). Existem diversos fatores
+              que devem ser considerados nessa pesquisa.
+              <br />
+              <br />
+              Por isso é extremamente recomendável que essa pesquisa de
+              viabilidade seja feita por um profissional que atua nessa área.
+            </p>
+          ),
         },
         question3: {
-          question: "Quais documentos devo levar para a consulta?",
+          question: "Quem pode registrar uma marca?",
           answer:
-            "Traga documentos relacionados à sua marca, como nomes ou logotipos, documentos de empresa, e quaisquer registros ou comprovantes que possam auxiliar no processo de análise.",
+            "Qualquer pessoa física ou jurídica que exerça atividade lícita e que seja relacionada à classe necessária pode realizar o registro da marca no INPI.",
         },
         question4: {
-          question:
-            "Vocês oferecem serviços de consultoria preventiva para marcas?",
+          question: "Preciso de logo para registrar uma marca?",
           answer:
-            "Sim, oferecemos consultoria preventiva para garantir que sua marca esteja registrada corretamente e evitar qualquer risco de violação ou problemas futuros.",
+            "Não! A marca pode ser registrada na forma “nominativa”, ou seja, apenas o nome e sem a presença de um logo. ",
+        },
+        question5: {
+          question:
+            "Posso começar a usar a marca antes da concessão do registro ou preciso esperar?",
+          answer:
+            "Até pode usar antes da concessão do registro. No entanto, lembre-se que você tem uma expectativa de direito, e ela só será sua após a concessão.",
+        },
+        question6: {
+          question:
+            "Qual o tempo que posso usar a marca, após a concessão do registro?",
+          answer:
+            "No Brasil, a validade do registro da marca é de 10 (dez) anos, podendo ser prorrogado por igual período e por quantas vezes forem necessárias. ",
+        },
+        question7: {
+          question:
+            "Preciso pagar algum tipo de mensalidade ou anuidade após a concessão do registro?",
+          answer:
+            "Não! Após a concessão do registro, não tem necessidade de pagar nenhum tipo de mensalidade ou anuidade para manter vigente a marca.",
+        },
+        question8: {
+          question: "Quanto custa para registrar uma marca?",
+          answer: (
+            <p>
+              Atualmente, o custo da taxa inicial do INPI é de R$ 415,00.
+              <br />
+              <br />
+              Contudo, pessoas físicas, microempreendedor individual (MEI),
+              empresas de porte EPP e ME e empresas sem fins lucrativos têm
+              desconto de 60% nas taxas do INPI.
+            </p>
+          ),
+        },
+        question9: {
+          question:
+            "Preciso registrar minha marca apenas em uma classe existente no INPI?",
+          answer: (
+            <p>
+              Depende! Existem 45 (quarenta e cinco) tipos de classes onde a
+              marca pode ser depositada. Da 1 a 34 são classes de produtos. Da
+              35 a 45 são classes de serviço.
+              <br />
+              <br />
+              Caso seja necessário a sua marca ser depositada em mais de uma
+              classe para um proteção fechada (completada), se assim não fizer,
+              saiba que outras pessoas poderão usar o nome da sua marca naquelas
+              classes que não foram realizadas o pedido.
+            </p>
+          ),
+        },
+        question10: {
+          question: "Direito de precedência, o que é?",
+          answer:
+            "Toda pessoa que, de boa-fé, usava no País, há pelo menos seis meses, marca idêntica ou semelhante, para a mesma atividade ou atividades afins, pode reivindicar o direito de registro da marca. ",
+        },
+        question11: {
+          question:
+            "Fui notificado extrajudicialmente para parar de usar a marca. O que faço agora?",
+          answer: (
+            <p>
+              Se você foi notificado para parar de usar determinada marca,
+              certamente essa marca estava registrada por outra pessoa no INPI.
+              <br />
+              <br />
+              Se a situação acima aconteceu, você precisará de um profissional
+              especializado para analisar e verificar uma solução para o seu
+              caso, não tem outro jeito.
+            </p>
+          ),
+        },
+        question12: {
+          question:
+            "Afinal, quais são os benefícios em ter uma marca devidamente registrada? ",
+          answer:
+            "São vários, mas vou expor alguns: i) ser dono da marca; ii) exclusividade de uso em todo território nacional; iii) prevenção contra uso por parte de terceiros; iv) possibilidade de utilização do ®; e v) ganhar maior visibilidade em plataformas de marketplace (Mercadolivre, Shopee, Magalu, Americanas, etc.).",
         },
       },
       paragraph: "Clique aqui caso tenha mais dúvidas",
