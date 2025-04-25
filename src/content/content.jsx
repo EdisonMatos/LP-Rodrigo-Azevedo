@@ -5,7 +5,6 @@ import bgHeroImg from "../assets/imgs/hero/bgHeroInfluencer.png";
 import heroDefaultImg from "../assets/imgs/hero/lawHero.jpg";
 import backgroundPersonMobile from "../assets/imgs/hero/bgHeroMobile.jpg";
 
-
 import imgFeatures from "../assets/imgs/features/imgServices.jpg";
 import imgDivisor from "../assets/imgs/features/imgDivisor.jpg";
 
@@ -129,7 +128,7 @@ const content = {
       title: (
         <h1 className="mb-[16px]">
           Da pesquisa de viabilidade
-          <span className="text-primary">  ao deferimento</span>
+          <span className="text-primary"> ao deferimento</span>
         </h1>
       ),
       subtitle:
@@ -265,7 +264,7 @@ const content = {
         img: featuresImg3,
         title: "Defesa contra oposições e indeferimentos",
         subtitle:
-          "Sua marca foi contestada? Atuamos com estratégia para garantir seu direito no INPI.",
+          "Sua marca foi impugnada? Atuamos com estratégia para garantir seu direito no INPI.",
         description: (
           <div>
             A_Definir <br />
