@@ -401,8 +401,8 @@ const content = {
           o valor da proteção de marca antes que o problema aconteça.
           <br />
           <br />
-          Hoje, atuo exclusivamente com registro e defesa de marcas, oferecendo
-          um serviço técnico, claro e acessível.
+          Atualmente, a maior parte do meu tempo é dedicado à proteção das
+          marcas, oferecendo um serviço técnico, claro e acessível.
           <br />
           <br />
           Com mais de dez anos de experiência, desenvolvi um diferencial que une
