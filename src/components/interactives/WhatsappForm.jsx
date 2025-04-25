@@ -7,7 +7,7 @@ const WhatsappForm = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [uf, setUf] = useState("");
+  // const [uf, setUf] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,11 +26,11 @@ const WhatsappForm = () => {
     setName(capitalizeFirstLetter(onlyLetters));
   };
 
-  const handleUfChange = (e) => {
-    const input = e.target.value;
-    const onlyLetters = input.replace(/[^a-zA-ZÀ-ÿ\s-]/g, ""); // Permite apenas letras, espaços e hífens
-    setUf(capitalizeFirstLetter(onlyLetters));
-  };
+  // const handleUfChange = (e) => {
+  //   const input = e.target.value;
+  //   const onlyLetters = input.replace(/[^a-zA-ZÀ-ÿ\s-]/g, ""); // Permite apenas letras, espaços e hífens
+  //   setUf(capitalizeFirstLetter(onlyLetters));
+  // };
 
   const handlePhoneChange = (e) => {
     const input = e.target.value.replace(/[^\d]/g, ""); // Remove tudo que não for número
@@ -39,65 +39,62 @@ const WhatsappForm = () => {
 
   const sendToWhatsapp = async () => {
     setIsSubmitting(true);
-  
+
     const validationErrors = {};
-  
+
     if (!name) {
       validationErrors.name = "O campo Nome é obrigatório.";
     } else if (!validateName(name)) {
       validationErrors.name = "Nome inválido.";
     }
-  
+
     if (!phone) {
       validationErrors.phone = "O campo Telefone é obrigatório.";
     } else if (!validatePhone(phone)) {
       validationErrors.phone = "Número inválido.";
     }
-  
+
     if (!email) {
       validationErrors.email = "O campo E-mail é obrigatório.";
     } else if (!validateEmail(email)) {
       validationErrors.email = "E-mail inválido.";
     }
-  
-    if (!uf) {
-      validationErrors.uf = "O campo Cidade e Estado é obrigatório.";
-    } else if (!validateUf(uf)) {
-      validationErrors.uf = "Cidade e Estado inválido.";
-    }
-  
+
+    // if (!uf) {
+    //   validationErrors.uf = "O campo Cidade e Estado é obrigatório.";
+    // } else if (!validateUf(uf)) {
+    //   validationErrors.uf = "Cidade e Estado inválido.";
+    // }
+
     if (!validateMessage(message)) {
       validationErrors.message = "O campo mensagem é obrigatório.";
     }
-  
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setIsSubmitting(false);
       return;
     }
-  
+
     const phoneNumber = 17992252648;
-  
+
     const messageText = `Olá! Aqui estão os dados recebidos:
   Nome: ${name}
   Telefone: ${phone}
   Email: ${email}
-  UF: ${uf}
   Mensagem: ${message}`;
-  
+
     const encodedMessage = encodeURIComponent(messageText);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  
+
     window.open(whatsappUrl, "_blank");
-  
+
     setName("");
     setPhone("");
     setEmail("");
-    setUf("");
     setMessage("");
     setIsSubmitting(false);
   };
-  
 
   const validateName = (name) => {
     const namePattern = /^[a-zA-ZÀ-ÿ\s]{5,}$/; // Permite pelo menos 5 caracteres (letras e espaços)
@@ -114,9 +111,9 @@ const WhatsappForm = () => {
     return emailPattern.test(email.trim());
   };
 
-  const validateUf = (uf) => {
-    return uf.trim().length >= 5; // Requer ao menos 5 caracteres para Cidade e Estado
-  };
+  // const validateUf = (uf) => {
+  //   return uf.trim().length >= 5; // Requer ao menos 5 caracteres para Cidade e Estado
+  // };
 
   const validateMessage = (message) => !!message;
 
@@ -198,7 +195,7 @@ const WhatsappForm = () => {
           {errors.email && <p className="text-red-500">{errors.email}</p>}
         </div>
         {/* Cidade/Estado */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <div className="flex mb-2 text-gray-500 tablet1:mb-0">
             <div className="flex items-center justify-center w-12 px-1 bg-white">
               <CiGlobe />
@@ -214,7 +211,7 @@ const WhatsappForm = () => {
             />
           </div>
           {errors.uf && <p className="text-red-500">{errors.uf}</p>}
-        </div>
+        </div> */}
         {/* Mensagem */}
         <div className="mb-6">
           <div className="flex mb-2 text-gray-500 tablet1:mb-0">
