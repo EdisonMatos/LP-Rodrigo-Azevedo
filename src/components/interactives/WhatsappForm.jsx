@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
 import { CiUser, CiPhone, CiMail, CiGlobe, CiChat1 } from "react-icons/ci";
-import emailjs from "@emailjs/browser";
 
 const WhatsappForm = () => {
   const [name, setName] = useState("");
@@ -40,82 +39,65 @@ const WhatsappForm = () => {
 
   const sendToWhatsapp = async () => {
     setIsSubmitting(true);
-
+  
     const validationErrors = {};
-
+  
     if (!name) {
       validationErrors.name = "O campo Nome é obrigatório.";
     } else if (!validateName(name)) {
       validationErrors.name = "Nome inválido.";
     }
-
+  
     if (!phone) {
       validationErrors.phone = "O campo Telefone é obrigatório.";
     } else if (!validatePhone(phone)) {
       validationErrors.phone = "Número inválido.";
     }
-
+  
     if (!email) {
       validationErrors.email = "O campo E-mail é obrigatório.";
     } else if (!validateEmail(email)) {
       validationErrors.email = "E-mail inválido.";
     }
-
+  
     if (!uf) {
       validationErrors.uf = "O campo Cidade e Estado é obrigatório.";
     } else if (!validateUf(uf)) {
       validationErrors.uf = "Cidade e Estado inválido.";
     }
-
+  
     if (!validateMessage(message)) {
       validationErrors.message = "O campo mensagem é obrigatório.";
     }
-
+  
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setIsSubmitting(false);
       return;
     }
-
-    const templateParams = {
-      to_name: name,
-      name,
-      phone,
-      email,
-      uf,
-      to_email: email,
-      message,
-    };
-
-    try {
-      const response = await emailjs.send(
-        "service_79yzhx9",
-        "template_mhpelei",
-        templateParams,
-        "HhY_ngFZdJ35Ugc0H"
-      );
-      console.log(
-        "Mensagem enviada com sucesso:",
-        response.status,
-        response.text
-      );
-
-      setName("");
-      setPhone("");
-      setEmail("");
-      setUf("");
-      setMessage("");
-      setIsSubmitting(false);
-      alert(
-        "Recebemos os seus dados com sucesso! Em breve nossa equipe entrará em contato. Obrigado!"
-      );
-      window.location.reload();
-    } catch (error) {
-      console.error("Erro ao enviar o e-mail:", error);
-      alert("Houve um erro ao enviar o e-mail. Tente novamente.");
-      setIsSubmitting(false);
-    }
+  
+    const phoneNumber = 17992252648;
+  
+    const messageText = `Olá! Aqui estão os dados recebidos:
+  Nome: ${name}
+  Telefone: ${phone}
+  Email: ${email}
+  UF: ${uf}
+  Mensagem: ${message}`;
+  
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+    window.open(whatsappUrl, "_blank");
+  
+    setName("");
+    setPhone("");
+    setEmail("");
+    setUf("");
+    setMessage("");
+    setIsSubmitting(false);
   };
+  
 
   const validateName = (name) => {
     const namePattern = /^[a-zA-ZÀ-ÿ\s]{5,}$/; // Permite pelo menos 5 caracteres (letras e espaços)

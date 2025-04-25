@@ -13,6 +13,7 @@ import AboutInstagram from "../components/sections/AboutInstagram";
 import BackToTopButton from "../components/interactives/BackToTopButton";
 import FloatingWhatsappButton from "../components/interactives/FloatingWhatsappButton";
 import Maps from "../components/sections/Maps";
+import FormAndLocation from "../components/sections/FormAndLocation"
 
 export default function Index() {
   return (
@@ -42,6 +43,7 @@ export default function Index() {
         x={false}
       />
       <Cta />
+      <FormAndLocation/>
       <Steps />
       <Maps />
       {/* <BlogPosts /> */}
