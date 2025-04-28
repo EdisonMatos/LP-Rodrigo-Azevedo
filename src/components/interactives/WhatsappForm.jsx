@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
 import { CiUser, CiPhone, CiMail, CiGlobe, CiChat1 } from "react-icons/ci";
-import emailjs from "@emailjs/browser";
 
 const WhatsappForm = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [uf, setUf] = useState("");
+  // const [uf, setUf] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,11 +26,11 @@ const WhatsappForm = () => {
     setName(capitalizeFirstLetter(onlyLetters));
   };
 
-  const handleUfChange = (e) => {
-    const input = e.target.value;
-    const onlyLetters = input.replace(/[^a-zA-ZÀ-ÿ\s-]/g, ""); // Permite apenas letras, espaços e hífens
-    setUf(capitalizeFirstLetter(onlyLetters));
-  };
+  // const handleUfChange = (e) => {
+  //   const input = e.target.value;
+  //   const onlyLetters = input.replace(/[^a-zA-ZÀ-ÿ\s-]/g, ""); // Permite apenas letras, espaços e hífens
+  //   setUf(capitalizeFirstLetter(onlyLetters));
+  // };
 
   const handlePhoneChange = (e) => {
     const input = e.target.value.replace(/[^\d]/g, ""); // Remove tudo que não for número
@@ -61,11 +60,11 @@ const WhatsappForm = () => {
       validationErrors.email = "E-mail inválido.";
     }
 
-    if (!uf) {
-      validationErrors.uf = "O campo Cidade e Estado é obrigatório.";
-    } else if (!validateUf(uf)) {
-      validationErrors.uf = "Cidade e Estado inválido.";
-    }
+    // if (!uf) {
+    //   validationErrors.uf = "O campo Cidade e Estado é obrigatório.";
+    // } else if (!validateUf(uf)) {
+    //   validationErrors.uf = "Cidade e Estado inválido.";
+    // }
 
     if (!validateMessage(message)) {
       validationErrors.message = "O campo mensagem é obrigatório.";
@@ -77,44 +76,24 @@ const WhatsappForm = () => {
       return;
     }
 
-    const templateParams = {
-      to_name: name,
-      name,
-      phone,
-      email,
-      uf,
-      to_email: email,
-      message,
-    };
+    const phoneNumber = 17992252648;
 
-    try {
-      const response = await emailjs.send(
-        "service_79yzhx9",
-        "template_mhpelei",
-        templateParams,
-        "HhY_ngFZdJ35Ugc0H"
-      );
-      console.log(
-        "Mensagem enviada com sucesso:",
-        response.status,
-        response.text
-      );
+    const messageText = `Olá! Aqui estão os dados recebidos:
+  Nome: ${name}
+  Telefone: ${phone}
+  Email: ${email}
+  Mensagem: ${message}`;
 
-      setName("");
-      setPhone("");
-      setEmail("");
-      setUf("");
-      setMessage("");
-      setIsSubmitting(false);
-      alert(
-        "Recebemos os seus dados com sucesso! Em breve nossa equipe entrará em contato. Obrigado!"
-      );
-      window.location.reload();
-    } catch (error) {
-      console.error("Erro ao enviar o e-mail:", error);
-      alert("Houve um erro ao enviar o e-mail. Tente novamente.");
-      setIsSubmitting(false);
-    }
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    setName("");
+    setPhone("");
+    setEmail("");
+    setMessage("");
+    setIsSubmitting(false);
   };
 
   const validateName = (name) => {
@@ -132,9 +111,9 @@ const WhatsappForm = () => {
     return emailPattern.test(email.trim());
   };
 
-  const validateUf = (uf) => {
-    return uf.trim().length >= 5; // Requer ao menos 5 caracteres para Cidade e Estado
-  };
+  // const validateUf = (uf) => {
+  //   return uf.trim().length >= 5; // Requer ao menos 5 caracteres para Cidade e Estado
+  // };
 
   const validateMessage = (message) => !!message;
 
@@ -216,7 +195,7 @@ const WhatsappForm = () => {
           {errors.email && <p className="text-red-500">{errors.email}</p>}
         </div>
         {/* Cidade/Estado */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <div className="flex mb-2 text-gray-500 tablet1:mb-0">
             <div className="flex items-center justify-center w-12 px-1 bg-white">
               <CiGlobe />
@@ -232,7 +211,7 @@ const WhatsappForm = () => {
             />
           </div>
           {errors.uf && <p className="text-red-500">{errors.uf}</p>}
-        </div>
+        </div> */}
         {/* Mensagem */}
         <div className="mb-6">
           <div className="flex mb-2 text-gray-500 tablet1:mb-0">
@@ -258,12 +237,12 @@ const WhatsappForm = () => {
           disabled={isSubmitting}
         >
           <div className="flex items-center justify-center w-full">
-            <img
+            {/* <img
               src={WhatsAppIcon}
               className="w-6 h-6 mr-2 phone2:w-8 phone2:h-8"
               alt="WhatsApp Icon"
-            />
-            <p>{isSubmitting ? "Enviando..." : "Enviar mensagem"}</p>
+            /> */}
+            <p>Enviar</p>
           </div>
         </button>
       </div>
