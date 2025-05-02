@@ -158,7 +158,7 @@ const content = {
             <path d="m16 18 2 2 4-4" />
           </svg>
         ),
-        text: "Atendimento presencial em SP e online para todo Brasil",
+        text: "Atendimento presencial em São José do Rio Preto - SP e online para todo Brasil",
       },
       ctaButtonAriaLabel:
         "Botão para chamada de ação para contato pelo whatsapp",
