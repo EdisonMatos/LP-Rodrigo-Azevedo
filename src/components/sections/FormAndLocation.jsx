@@ -22,7 +22,7 @@ export default function Steps() {
   const [modalTitle, setModalTitle] = useState("");
 
   return (
-    <SectionArea className="bg-bgSectionDark " p>
+    <SectionArea className="bg-bgSectionDark " paddingbot={false}>
       {/* <SectionShapeDiv shapeDivArrow shapeColor="text-white"/> */}
       <SectionWrapper className="flex  flex-col ">
         <MotionDivDownToUp className="flex-col w-full desktop1:w-[415px] desktop2:w-[685px] flex justify-center items-center ">
