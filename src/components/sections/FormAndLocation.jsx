@@ -25,7 +25,7 @@ export default function Steps() {
     <SectionArea className="bg-bgSectionDark " p>
       {/* <SectionShapeDiv shapeDivArrow shapeColor="text-white"/> */}
       <SectionWrapper className="flex  flex-col ">
-        <MotionDivDownToUp className="flex-col w-full desktop1:w-[415px] desktop2:w-[485px] flex justify-center items-center ">
+        <MotionDivDownToUp className="flex-col w-full desktop1:w-[415px] desktop2:w-[685px] flex justify-center items-center ">
           <SectionHeader
             className="text-center desktop1:flex desktop1:w-full"
             miniTitle={content.texts.contactForm.minitag}

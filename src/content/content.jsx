@@ -449,7 +449,7 @@ const content = {
     },
     contactForm: {
       minitag: "CONTE COM NOSSA AJUDA",
-      title: "Como podemos ajudar?",
+      title: "Quer saber se sua marca está disponível para ser registrada?",
       subtitle:
         "Preencha o formulário abaixo e retornaremos o mais rápido possível.",
       embedsrc:
