@@ -448,7 +448,7 @@ const content = {
       ctaButtonText: "Entre em contato pelo WhatsApp",
     },
     contactForm: {
-      minitag: "FORMULÁRIO",
+      minitag: "CONTE COM NOSSA AJUDA",
       title: "Como podemos ajudar?",
       subtitle:
         "Preencha o formulário abaixo e retornaremos o mais rápido possível.",
