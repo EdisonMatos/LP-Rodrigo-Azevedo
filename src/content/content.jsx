@@ -1,6 +1,6 @@
 import logo from "../assets/imgs/logo/logo.webp";
 import heroImgPhone from "../assets/imgs/hero/personImg.webp";
-import heroImgDesktop from "../assets/imgs/hero/bgHeroInfluencer.webp";
+import heroImgDesktop from "../assets/imgs/hero/bgHeroInfluencer.jpg";
 import bgHeroImg from "../assets/imgs/hero/bgHeroInfluencer.webp";
 import heroDefaultImg from "../assets/imgs/hero/lawHero.jpg";
 import backgroundPersonMobile from "../assets/imgs/hero/bgHeroMobile.webp";
@@ -158,7 +158,7 @@ const content = {
             <path d="m16 18 2 2 4-4" />
           </svg>
         ),
-        text: "Atendimento presencial em SP e online para todo Brasil",
+        text: "Atendimento presencial em São José do Rio Preto - SP e online para todo Brasil",
       },
       ctaButtonAriaLabel:
         "Botão para chamada de ação para contato pelo whatsapp",
@@ -448,7 +448,7 @@ const content = {
       ctaButtonText: "Entre em contato pelo WhatsApp",
     },
     contactForm: {
-      minitag: "FORMULÁRIO",
+      minitag: "CONTE COM NOSSA AJUDA",
       title: "Como podemos ajudar?",
       subtitle:
         "Preencha o formulário abaixo e retornaremos o mais rápido possível.",
